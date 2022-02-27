@@ -2,18 +2,21 @@
 import axios from 'axios';
 import {ref} from 'vue';
 import Cardview from './Cardview.vue';
-import ShowUser from './ShowUser.vue';
 import { useRouter , useRoute } from 'vue-router';
+import '../../src/main.ts';
+const loading = ref(true);
 
-const loading = ref(true)
-const users = ref([])
 
-function getUsers(){
+
+
+const route = useRoute()
+const user = ref({});
+function getUser(){
 // Make a request for a user with a given ID
-axios.get('https://jsonplaceholder.typicode.com/users')
+axios.get(`https://jsonplaceholder.typicode.com/users/${route.params.id}`)
   .then(function (response) {
     // handle success
-    users.value = response.data;
+    user.value = response.data;
     loading.value = false;
   })
   .catch(function (error) {
@@ -25,27 +28,25 @@ axios.get('https://jsonplaceholder.typicode.com/users')
   });
   
 }
-getUsers()
+getUser()
 let Emad ="Emad";
-const route =useRoute();
-
 </script>
 
 <template>
-<div v-if="route.params.id == undefined" class="container">
+<div class="container">
     
     <div class="row g-3">
       <div v-if="loading" class="spinner-border" role="status">
   <span class="visually-hidden">Loading...</span>
        </div>
-        <div v-else  class="col-md-3" v-for="user in users">
+        <div v-else  class="col-md-3" >
         <Cardview :user="user"/>
-       
+      
         </div>
     </div>
-    
+  
 </div>
-<router-view v-else></router-view>
+ 
 </template>
 
 
