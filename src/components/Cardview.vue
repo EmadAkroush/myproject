@@ -1,4 +1,5 @@
 <script setup lang="ts" >
+import { useRouter , useRoute } from 'vue-router';
 defineProps({
   user: Object,
 })
@@ -10,7 +11,9 @@ defineProps({
 
 <div class="card" style="width: 18rem;">
   <div class="card-header">
-    {{user.name}}
+    <router-link :to="{ name: 'userId', params: { id: user.id }}" > {{user.name}}
+    </router-link>
+    
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Username: {{user.username}}</li>

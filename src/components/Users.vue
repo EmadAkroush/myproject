@@ -28,13 +28,11 @@ axios.get('https://jsonplaceholder.typicode.com/users')
 getUsers()
 let Emad ="Emad";
 const route =useRoute();
-
+// v-if="route.params.id == undefined"
 </script>
 
 <template>
-<div v-if="route.params.id == undefined" class="container">
-    
-    <div class="row g-3">
+
       <div v-if="loading" class="spinner-border" role="status">
   <span class="visually-hidden">Loading...</span>
        </div>
@@ -42,10 +40,8 @@ const route =useRoute();
         <Cardview :user="user"/>
        
         </div>
-    </div>
-    
-</div>
-<router-view v-else></router-view>
+
+
 </template>
 
 
