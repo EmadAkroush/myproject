@@ -19,7 +19,7 @@ import { useRouter , useRoute } from 'vue-router';
          <router-link class="nav-link" to='/users'>users</router-link>
         </li>
         <li class="nav-item">
-         <router-link class="nav-link" to='/post'>post</router-link>
+         <router-link class="nav-link" to='/posts'>post</router-link>
         </li>
         
       </ul>

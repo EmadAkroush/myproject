@@ -14,7 +14,9 @@ import { useRouter , useRoute } from 'vue-router';
     </div>
     
 </div>
+
 <router-view></router-view>
+<router-link class="btn btn-dark" :to="{name:'Post'}" >posts</router-link>
 </template>
 <style>
 
