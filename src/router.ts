@@ -4,7 +4,7 @@ import Users from './components/Users.vue'
 import Showuser from './components/Showuser.vue'
 import Templateuser from './components/Templateuser.vue'
 import Posts from './components/Posts.vue'
-import Showposts from './components/Showposts.vue'
+import Showpost from './components/Showpost.vue'
 import TemplatePost from './components/TemplatePost.vue'
 
 
@@ -21,7 +21,7 @@ const routes = [
     ]},
     { path:  "/posts", name: "postTemplate", component: TemplatePost , children:[
       {path:  "", name: "Post", component: Posts},
-      // {path:  ":id", name: "postId", component: Showpost}
+      {path:  ":id", name: "postId", component: Showpost}
     ]},
     
 
