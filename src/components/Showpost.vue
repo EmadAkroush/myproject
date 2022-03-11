@@ -1,7 +1,7 @@
 <script setup lang="ts" >
 import axios from 'axios';
 import {ref} from 'vue';
-import ShowUser from './Showuser.vue';
+
 import { useRouter , useRoute } from 'vue-router';
 
 const loading = ref(true)
@@ -38,7 +38,7 @@ let Emad ="Emad";
         <div v-else  class="col-md-3">
         <div class="card" style="width: 18rem;">
   <div class="card-header">
-  
+
      {{post.title}}
     
   </div>

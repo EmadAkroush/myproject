@@ -1,7 +1,7 @@
 <script setup lang="ts" >
 import axios from 'axios';
 import {ref} from 'vue';
-import ShowUser from './Showuser.vue';
+
 import { useRouter , useRoute } from 'vue-router';
 
 const loading = ref(true)
@@ -31,7 +31,9 @@ const route =useRoute();
 </script>
 
 <template>
-
+     <div>
+     <router-link class="btn btn-dark" to="create">Create post</router-link>
+     </div>
       <div v-if="loading" class="spinner-border" role="status">
   <span class="visually-hidden">Loading...</span>
        </div>

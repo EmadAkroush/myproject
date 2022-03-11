@@ -3,6 +3,7 @@ import { useRouter , useRoute } from 'vue-router';
 
 </script>
 <template>
+
   <div   class="container">
     <div class="row g-3">
     
@@ -10,6 +11,7 @@ import { useRouter , useRoute } from 'vue-router';
       </div>
     
 </div>
+
 </template>
 <style>
 
